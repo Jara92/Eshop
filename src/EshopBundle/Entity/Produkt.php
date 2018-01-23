@@ -35,7 +35,7 @@ class Produkt {
      * @ORM\OneToOne(targetEntity="EshopBundle\Entity\Category", mappedBy="category")
      * @ORM\JoinColumn(nullable=true, referencedColumnName="id")
      */
-    private $parent;
+    private $category;
     /**
     * @ORM\Column(type="boolean")
     */
@@ -68,9 +68,6 @@ class Produkt {
     function getProducts() {
         return $this->products;
     }
-    function getParent() {
-        return $this->parent;
-    }
     function getPrice() {
         return $this->price;
     }
@@ -82,9 +79,6 @@ class Produkt {
     }
     function setProducts($products) {
         $this->products = $products;
-    }
-    function setParent($parent) {
-        $this->parent = $parent;
     }
     function setPrice($price) {
         $this->price = $price;
@@ -109,6 +103,13 @@ class Produkt {
 
     function setActive($active) {
         $this->active = $active;
+    }
+    function getCategory() {
+        return $this->category;
+    }
+
+    function setCategory($category) {
+        $this->category = $category;
     }
 
 
